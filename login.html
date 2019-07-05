@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Form </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkbox.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div>
+            <div class="signup-content">
+                <div class="signup-img" style="margin-top:130px">
+                    <img src="images/signup-img.svg" alt="">
+                </div>
+                <div class="signup-form">
+                    
+                    <form method="POST" style="padding: 50px 70px 50px 70px;" onsubmit="myFunction()" id="register-form">
+                        <h2>registration form</h2>
+
+                        <div class="form-group">
+                            <label for="nama">Nama :</label>
+                            <input type="text" name="nama" onkeypress="capitalize(string)" id="nama" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="hobi" class="radio-label">Hobi :</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" id="a1" name="a-1" value="Olahraga">
+                            <label for="a1">Olahraga</label>
+                            <input type="checkbox" id="a2" name="a-2" value="Membaca">
+                            <label for="a2">Membaca</label>
+                            <input type="checkbox" id="a3" name="a-3" value="Traveling">
+                            <label for="a3">Traveling</label>
+                            <input type="checkbox" id="a4" name="a-4" value="Memasak">
+                            <label for="a4">Memasak</label>
+                        </div>
+                        
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Jenis Kelamin :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="laki" checked>
+                                <label for="laki">Laki-Laki</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="perempuan">
+                                <label for="perempuan">Perempuan</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" name="email" id="email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telepon :</label>
+                            <input type="text" onkeypress="isInputNumber(event)" name="phone" id="phone" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username :</label>
+                            <input type="text" name="username" id="username" maxlength="10" required/>
+                        </div>
+                        <div class="form-group">
+                          <label for="password">Password :</label>
+                          <input type="password" class="form-control" name="password" maxlength="7" id="password" required placeholder="">
+                        </div>
+                        
+                        <div class="form-submit">
+                            <input type="reset" value="Reset" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Daftar" class="submit" name="submit" id="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>   
+        function isInputNumber(event){
+            var ch = String.fromCharCode(event.which);
+            if(!(/[0-9]/.test(ch))){
+                event.preventDefault();
+            }
+        }
+        
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function myFunction() {
+            alert("The form was submitted");
+        }
+    </script>
+</body>
+</html>
